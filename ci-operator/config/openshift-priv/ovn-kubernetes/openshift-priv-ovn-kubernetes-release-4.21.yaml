@@ -7,7 +7,7 @@ base_images:
     name: hypershift-operator
     namespace: hypershift
     tag: latest
-  ocp_4.19_base-rhel9:
+  ocp_4.20_base-rhel9:
     name: 4.21-priv
     namespace: ocp-private
     tag: base-rhel9
@@ -32,9 +32,9 @@ canonical_go_repository: github.com/openshift/ovn-kubernetes
 images:
 - dockerfile_path: Dockerfile.base
   inputs:
-    ocp_4.19_base-rhel9:
+    ocp_4.20_base-rhel9:
       as:
-      - registry.ci.openshift.org/ocp/4.19:base-rhel9
+      - registry.ci.openshift.org/ocp/4.20:base-rhel9
   to: ovn-kubernetes-base
 - dockerfile_path: Dockerfile
   from: ovn-kubernetes-base
@@ -377,7 +377,7 @@ tests:
       CHURN: "true"
       COMPUTE_NODE_REPLICAS: "24"
       COMPUTE_NODE_TYPE: m5.xlarge
-      EXTRA_FLAGS: --churn-duration=30m --churn-percent=25
+      EXTRA_FLAGS: --churn-duration=120m --churn-percent=50
       ITERATION_MULTIPLIER_ENV: "3"
       RUN_ORION: "true"
       VERSION: "4.20"

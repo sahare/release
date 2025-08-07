@@ -71,6 +71,8 @@ supplementalCIImages:
     image: quay.io/redhat-services-prod/openshift/boilerplate:image-v7.3.0
   openshift/boilerplate:image-v7.4.0:
     image: quay.io/redhat-services-prod/openshift/boilerplate:image-v7.4.0
+  openshift/boilerplate:image-v8.0.0:
+    image: quay.io/redhat-services-prod/openshift/boilerplate:image-v8.0.0
   ci/ci-tools-build-root:1.23:
     namespace: ci
     name: ci-tools-build-root
@@ -114,7 +116,7 @@ supplementalCIImages:
   chaos/prow-scripts:latest:
     image: quay.io/redhat-chaos/prow-scripts:latest
   ci/maistra-builder:upstream-master:
-    image: gcr.io/istio-testing/build-tools:master-8e6480403f5cf4c9a4cd9d65174d01850e632e1a
+    image: gcr.io/istio-testing/build-tools:master-39b2905e5cc51d50b21c97ae5ee3d1b26d518353
   ci/maistra-builder:upstream-1.24:
     image: gcr.io/istio-testing/build-tools:release-1.24-f9fb31e097a085fca3995f19f051cb8f8a396837
   ci/maistra-builder:upstream-1.26:
@@ -371,6 +373,8 @@ supplementalCIImages:
     image: quay.io/ocs-dev/odf-console-ci-runner:node18
   ci/odf-console-ci-runner:node20:
     image: quay.io/ocs-dev/odf-console-ci-runner:node20
+  ci/odf-console-ci-runner:node22:
+    image: quay.io/ocs-dev/odf-console-ci-runner:node22
   ci/ocs-ci-container:debug:
     image: quay.io/ocsci/ocs-ci-container:debug
   ci/ocs-ci-container:stable:
@@ -447,22 +451,10 @@ supplementalCIImages:
     image: quay.io/rhmessagingqe/claire:amq-broker-lpt
   ci/rh_jdk_ocp_testsuite:latest:
     image: quay.io/rhopenjdkqa/rh_jdk_ocp_testsuite:latest
-  ci/strimzi-tests:release-0.29.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.29.x
-  ci/strimzi-tests:release-0.32.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.32.x
-  ci/strimzi-tests:release-0.34.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.34.x
-  ci/strimzi-tests:release-0.36.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.36.x
-  ci/strimzi-tests:release-0.38.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.38.x
-  ci/strimzi-tests:release-0.40.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.40.x
-  ci/strimzi-tests:release-0.43.x:
-    image: quay.io/strimzi-qe/strimzi-tests:release-0.43.x
   ci/strimzi-tests:release-0.45.x:
     image: quay.io/strimzi-qe/strimzi-tests:release-0.45.x
+  ci/strimzi-tests:release-0.46.x:
+    image: quay.io/strimzi-qe/strimzi-tests:release-0.46.x
   ci/fedora:latest:
     image: registry.fedoraproject.org/fedora:latest
   ci/ibm-hypershift-testing:latest:
@@ -879,6 +871,10 @@ supplementalCIImages:
     namespace: hypershift-toolkit
     name: roks-toolkit-base
     tag: latest
+  ci/hypershift-cli:latest:
+    namespace: ci
+    name: hypershift-cli
+    tag: latest
   ci/hypershift-python:latest:
     image: quay.io/hypershift/hypershift-ci-python:latest
   ci/mapt:v0.9.3:
@@ -969,6 +965,14 @@ supplementalCIImages:
     namespace: edge-infrastructure
     name: ocm-2.15
     tag: assisted-installer-controller
+  dno/droute:latest:
+    image: quay.io/dno/droute:latest
+  dno/droute:latest-amd64:
+    image: quay.io/dno/droute:latest-amd64
+  ci/opendatahub-tests:2.19:
+    image: quay.io/opendatahub/opendatahub-tests:2.19
+  ci/opendatahub-tests:2.22:
+    image: quay.io/opendatahub/opendatahub-tests:2.22
 ignoredSources:
 - image: registry.fedoraproject.org/fedora:latest
   reason: https://issues.redhat.com/browse/RFE-5363
